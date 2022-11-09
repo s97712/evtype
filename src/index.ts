@@ -16,7 +16,7 @@ export abstract class Evtype<T extends EventTyped> {
     this.listen(name, hander as any)
   }
 
-  off<N extends keyof T>(name: N & string, hander: (...args: Parameters<T[N]>) => void) {
+  off<N extends keyof T>(name: N & string, hander?: (...args: Parameters<T[N]>) => void) {
     this.unlisten(name, hander as any)
   }
 

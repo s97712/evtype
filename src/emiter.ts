@@ -12,7 +12,7 @@ export class Emiter<T extends EventTyped> extends Evtype<T> {
     this.emiter.on(name, (args) => handler(...args as any[]))
   }
 
-  protected unlisten(name: string, hander: (...args: any[]) => void): void {
+  protected unlisten(name: string, hander?: (...args: any[]) => void): void {
     this.emiter.off(name, hander)
   }
 
